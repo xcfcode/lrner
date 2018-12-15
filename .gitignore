@@ -1,0 +1,5 @@
+model/*.pyc
+utils/*.pyc
+.idea/*
+.DS_Store
+.gitattributes
