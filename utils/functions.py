@@ -187,7 +187,11 @@ def load_pretrain_emb(embedding_path):
                     print "embedd_dim:{}".format(embedd_dim)
 
                 else:
-                    assert (embedd_dim + 1 == len(tokens))
+                    try:
+                        assert (embedd_dim + 1 == len(tokens))
+                    except:
+                        print("Error embedding : {}".format(tokens[0]))
+                        continue
                 embedd = np.empty([1, embedd_dim])
                 embedd[:] = tokens[1:]
                 embedd_dict[tokens[0].decode('utf-8')] = embedd
